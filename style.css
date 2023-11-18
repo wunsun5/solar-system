@@ -1,0 +1,244 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.container{
+    width: 40em;
+    height: 40em;
+    /* background-color: red; */
+    position: relative;
+}
+
+.sun{
+    position: absolute;
+    top: 18.5em;
+    left: 18.5em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: yellow;
+    box-shadow: 0 0 1em white;
+}
+
+.merkury, .venus, .earth, .mars, .jupiter, .saturnus, .uranus, .neptune {
+    border-style: solid;
+    border-color: transparent white;
+    border-width: 0 0.001em 0.01em 0;
+    border-radius: 50%;
+}
+
+.merkury{
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    top: 16.5em;
+    left: 16.5em;
+    animation: orbit .8s linear infinite;
+}
+
+.merkury::before{
+    content: "";
+    position: absolute;
+    bottom: 0.91em;
+    right: 0.91em;
+    background-color: silver;
+    width: 0.15em;
+    height: 0.15em;
+    border-radius: 50%;
+}
+
+.venus{
+    position: absolute;
+    width: 9.5em;
+    height: 9.5em;
+    top: 15.25em;
+    left: 15.25em;
+    animation: orbit 2s linear infinite;
+}
+
+.venus::before{
+    content: "";
+    position: absolute;
+    bottom: 1.1em;
+    right: 1.11em;
+    background-color: orange;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+}
+
+.earth{
+    position: absolute;
+    width: 12em;
+    height: 12em;
+    top: 14em;
+    left: 14em;
+    animation: orbit 3.3333s linear infinite;
+}
+
+.earth::before{
+    content: "";
+    position: absolute;
+    bottom: 1.5em;
+    right: 1.42em;
+    background-color: lightblue;
+    width: .6em;
+    height: .6em;
+    border-radius: 50%;   
+}
+
+.mars{
+    position: absolute;
+    width: 14.5em;
+    height: 14.5em;
+    top: 12.75em;
+    left: 12.75em;
+    animation: orbit 6.33327s linear infinite;
+}
+
+.mars::before{
+    content: "";
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    background-color: brown;
+    width: .25em;
+    height: .25em;
+    border-radius: 50%;
+}
+
+.asteroid{
+    position: absolute;
+    width: 20em;
+    height: 20em;
+    top: 10em;
+    left: 10em;
+    border-radius: 50%;
+    box-shadow: inset 0 0 27px 8px white;
+}
+
+.jupiter{
+    position: absolute;
+    width: 28em;
+    height: 28em;
+    top: 6em;
+    left: 6em;
+    animation: orbit 39.532938s linear infinite;
+}
+
+.jupiter::before{
+    content: "";
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    height: 4em;
+    width: 4em;
+    background: linear-gradient(to bottom, #987b04, #ff8c00);
+    border-radius: 50%;
+}
+
+.jupiter::before{
+    content: "";
+    position: absolute;
+}
+
+.saturnus{
+    position: absolute;
+    width: 38em;
+    height: 38em;
+    top: 1em;
+    left: 1em;
+    animation: orbit 98.332332s linear infinite;
+}
+
+.saturnus::before{
+    content: "";
+    position: absolute;
+    bottom: 3em;
+    right: 5em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #ffd700, #cd853f)
+}
+
+.saturnus::after{
+    content: "";
+    position: absolute;
+    bottom: 2.3em;
+    right: 4.3em;
+    width: 4.5em;
+    height: 4.4em;
+    border-radius: 50%;
+    box-shadow: inset 0 0 15px 2px white;
+}
+
+.uranus{
+    position: absolute;
+    width: 48em;
+    height: 48em;
+    top: -4em;
+    left: -4em;
+    animation: orbit 279.997057s linear infinite;
+}
+
+.uranus::before{
+    content: "";
+    position: absolute;
+    bottom: 5.6em;
+    right: 6em;
+    width: 2.4em;
+    height: 2.4em;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.uranus::after{
+    content: "";
+    position: absolute;
+    bottom: 4.9em;
+    right: 6.8em;
+    transform: rotate(40deg);
+    width: .6em;
+    height: 3.5em;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 0 0.01em 0.01em;
+}
+
+.neptune{
+    position: absolute;
+    width: 60em;
+    height: 60em;
+    top: -10em;
+    left: -10em;
+    animation: orbit 549.994107s linear infinite;
+}
+
+.neptune::before{
+    content: "";
+    position: absolute;
+    width: 1.9em;
+    height: 1.9em;
+    background-color: rgb(7, 7, 241);
+    border-radius: 50%;
+    bottom: 8em;
+    right: 7.8em;
+}
+
+@keyframes orbit{
+    to{
+        transform: rotate(360deg);
+    }
+}
